@@ -166,7 +166,7 @@ body {
     display: block;
 }
 
-/* Main Content Styles */
+
 .main-content {
     flex: 1;
     position: relative;
@@ -318,4 +318,132 @@ h3 {
 .tech-badge:hover i,
 .tech-badge:hover span {
     color: white;
+}
+
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none; 
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #171717;
+    color: white;
+    border-radius: 5px;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: 1px solid #2a3a4a;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background-color: #2a3a4a;
+}
+
+@media (max-width: 768px) {
+    body {
+        display: block; 
+    }
+    
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        width: 250px;
+        z-index: 99;
+        transition: transform 0.3s ease;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        transition: margin-left 0.3s ease;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    body.sidebar-active .sidebar {
+        transform: translateX(0);
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    body.sidebar-active .main-content {
+        margin-left: 0; 
+    }
+    
+
+    .hero {
+        height: 30vh;
+        padding-left: 5%;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+    }
+    
+    .tech-stack-container {
+        gap: 10px;
+    }
+    
+    .tech-badge {
+        padding: 10px 15px;
+        min-width: 80px;
+    }
+    
+
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 98;
+    }
+    
+    body.sidebar-active .sidebar-overlay {
+        display: block;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.75rem;
+    }
+    
+    .tech-badge {
+        min-width: 70px;
+        padding: 8px 12px;
+    }
+    
+    .tech-stack-container {
+        gap: 8px;
+    }
 }
