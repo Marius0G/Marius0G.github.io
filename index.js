@@ -1,3 +1,4 @@
+// Enhanced JavaScript for project cards functionality
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -55,6 +56,38 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.remove('sidebar-active');
         }
     });
+    
+    // Project cards animation on scroll
+    function animateProjectCards() {
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        projectCards.forEach((card, index) => {
+            setTimeout(() => {
+     
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+           
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                            observer.unobserve(card);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                observer.observe(card);
+            }, index * 100); 
+        });
+    }
+    
+    
+    if (document.querySelectorAll('.project-card').length > 0) {
+        animateProjectCards();
+    }
     
     window.addEventListener('scroll', highlightCurrentSection);
     highlightCurrentSection();
