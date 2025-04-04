@@ -240,12 +240,18 @@ for multiple cities using a text-based user interface.
                 <div class="container">
                     <h2 class="section-title">CV</h2>
                     <div class="cv-content">
-                        <div class="education">
-                            <h3>Education</h3>
+                        <div class="pdf-viewer-container">
+                            <object data="documents/cv-manea-marius.pdf" type="application/pdf" class="pdf-viewer">
+                                <div class="pdf-fallback">
+                                    <p>It appears your browser doesn't support embedded PDFs. You can <a href="documents/cv-manea-marius.pdf" target="_blank">view it in a new tab</a> or download it using the button below.</p>
+                                </div>
+                            </object>
                         </div>
-                        <div class="experience">
-                            <h3>Experience</h3>
-
+                        
+                        <div class="download-container">
+                            <a href="documents/cv-manea-marius.pdf" download class="cv-download-btn">
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
                         </div>
                     </div>
                 </div>
