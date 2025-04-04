@@ -536,6 +536,139 @@ h3 {
     box-shadow: 0 6px 12px rgba(23, 190, 187, 0.4);
 }
 
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #17BEBB;
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+}
+
+.contact-item a {
+    color: #17BEBB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #0e7c7b;
+    text-decoration: underline;
+}
+
+.contact-form {
+    flex: 2;
+    min-width: 300px;
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #272727;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #17BEBB;
+    box-shadow: 0 0 0 2px rgba(23, 190, 187, 0.2);
+}
+
+.submit-btn {
+    background-color: #17BEBB;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn i {
+    font-size: 1.2rem;
+}
+
+.submit-btn:hover {
+    background-color: #0e7c7b;
+    transform: translateY(-3px);
+}
+
+.form-status {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.form-status.error {
+    display: block;
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
 
 @media (max-width: 768px) {
     body {
@@ -637,6 +770,15 @@ h3 {
 
     .pdf-viewer-container {
         height: 600px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact-info, 
+    .contact-form {
+        width: 100%;
     }
 }
 

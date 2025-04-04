@@ -91,4 +91,57 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.addEventListener('scroll', highlightCurrentSection);
     highlightCurrentSection();
+
+
+    // FORM CODE
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Validation
+            if (!name || !email || !subject || !message) {
+                showStatus('error', 'Please fill in all fields');
+                return;
+            }
+            
+            // Send email using EmailJS
+            // You need to sign up for EmailJS and configure your template
+            emailjs.send('service_c48zykq', 'template_7c5t6ei', {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            })
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                showStatus('success', 'Your message has been sent successfully!');
+                contactForm.reset();
+            })
+            .catch(function(error) {
+                console.log('FAILED...', error);
+                showStatus('error', 'Failed to send your message. Please try again later.');
+            });
+        });
+    }
+    
+    function showStatus(type, message) {
+        formStatus.className = 'form-status ' + type;
+        formStatus.textContent = message;
+        formStatus.style.display = 'block';
+        
+        // Hide status after 5 seconds
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 5000);
+    }
 });

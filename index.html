@@ -37,7 +37,7 @@
             <a href="#about" class="nav-link"><i class="fas fa-user"></i> About Me</a>
             <a href="#projects" class="nav-link"><i class="fas fa-laptop-code"></i> Personal Projects</a>
             <a href="#cv" class="nav-link"><i class="fas fa-file-alt"></i> CV</a>
-            <a href="#" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
         </div>
         </div>
     </div>
@@ -256,10 +256,67 @@ for multiple cities using a text-based user interface.
                     </div>
                 </div>
             </section>
+
+            <section id="contact" class="section">
+                <div class="container">
+                    <h2 class="section-title">Contact Me</h2>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <p>Email: <a href="mailto:mariusmanea.teo@gmail.com">mariusmanea.teo@gmail.com</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Location: Bucharest, Romania</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-university"></i>
+                                <p>University of Bucharest</p>
+                            </div>
+                        </div>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                            
+                            <div id="formStatus" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
             
 
             
     </div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("joMFr2VIfw0IpoXSZ"); 
+  })();
+</script>
 </body>
 </html>
