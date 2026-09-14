@@ -1024,6 +1024,33 @@ a {
   gap: 0.6rem;
 }
 
+/* Event photo band: 4:5 frames, the middle one dropped for rhythm */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4) var(--col-gap);
+  margin-top: var(--space-6);
+}
+
+.gallery > :first-child {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 48em) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .gallery > :first-child {
+    grid-column: auto;
+  }
+
+  .gallery > :nth-child(2) {
+    margin-top: var(--space-6);
+  }
+}
+
 /* ---------- Projects ---------- */
 
 .project {
