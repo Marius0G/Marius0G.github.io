@@ -73,8 +73,8 @@
           Bucharest, Romania
         </p>
         <h1 class="hero__title display" id="hero-title">
-          <span class="mask"><span class="mask__inner">Marius</span></span>
-          <span class="mask"><span class="mask__inner">Manea<svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></span></span>
+          <span class="mask" data-drift-line="-1"><span class="mask__inner">Marius</span></span>
+          <span class="mask" data-drift-line="1"><span class="mask__inner">Manea<svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></span></span>
         </h1>
         <p class="hero__roles label">
           <span>AI Engineer</span>
@@ -162,7 +162,7 @@
     <section class="section wrap" id="experience" aria-labelledby="experience-title">
       <header class="section__head" data-reveal="head">
         <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 01</p>
-        <h2 class="section__title display" id="experience-title"><span class="mask"><span class="mask__inner">Experience</span></span></h2>
+        <h2 class="section__title display" id="experience-title" data-drift data-ghost="Experience"><span class="mask"><span class="mask__inner">Experience</span></span></h2>
         <p class="section__aside label">Work and leadership</p>
       </header>
 
@@ -181,25 +181,43 @@
         <div class="row__side"><p class="label muted">AI engineering</p></div>
       </article>
 
-      <article class="row" data-reveal>
+      <article class="row row--feature" data-reveal>
         <p class="row__when label">Sep 2025 — Present</p>
-        <div class="row__main">
-          <h3 class="row__title">Management &amp; Fundraising Director</h3>
+        <div class="feature__text">
+          <h3 class="feature__title display">Management &amp; Fundraising Director</h3>
           <p class="row__org">ASMI Bucharest</p>
-          <p>More than 20 partnerships and support agreements secured. I lead the volunteer fundraising team, set the corporate outreach strategy and represent ASMI in partner meetings. I joined as a fundraising volunteer in November 2024.</p>
+          <div class="feature__body">
+            <div class="stat-disc" aria-hidden="true">
+              <span class="stat-disc__num display">20<span>+</span></span>
+              <span class="label">Partnerships</span>
+            </div>
+            <p>More than 20 partnerships and support agreements secured. I lead the volunteer fundraising team, set the corporate outreach strategy and represent ASMI in partner meetings. I joined as a fundraising volunteer in November 2024.</p>
+          </div>
+          <ul class="tags label" aria-label="Focus">
+            <li class="tag tag--solid">Leadership</li>
+            <li class="tag">Corporate outreach</li>
+            <li class="tag">Partner meetings</li>
+          </ul>
         </div>
-        <div class="row__side">
-          <p class="label muted">Leadership</p>
-          <figure class="row__photo photo" data-reveal="media">
+        <figure class="feature__photo photo" data-reveal="media">
+          <div class="feature__media">
             <div class="photo__frame">
               <picture>
                 <source srcset="assets/img/asmi-bucharest-stand.webp" type="image/webp">
                 <img src="assets/img/asmi-bucharest-stand.jpg" width="760" height="932" loading="lazy" alt="Marius talking with students at the ASMI Bucharest stand">
               </picture>
             </div>
-            <figcaption class="label"><span>ASMI Bucharest</span></figcaption>
-          </figure>
-        </div>
+            <svg class="badge" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+              <circle class="badge__disc" cx="100" cy="100" r="98"/>
+              <g class="badge__ring">
+                <path id="badge-path-asmi" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0" fill="none"/>
+                <text><textPath href="#badge-path-asmi" textLength="450" lengthAdjust="spacing">ASMI BUCHAREST • 20+ PARTNERSHIPS • </textPath></text>
+              </g>
+              <use class="badge__star" href="#i-star" x="78" y="78" width="44" height="44"/>
+            </svg>
+          </div>
+          <figcaption class="label"><span>ASMI Bucharest</span></figcaption>
+        </figure>
       </article>
     </section>
 
@@ -207,7 +225,7 @@
     <section class="section wrap" id="hackathons" aria-labelledby="hackathons-title">
       <header class="section__head" data-reveal="head">
         <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 02</p>
-        <h2 class="section__title display" id="hackathons-title"><span class="mask"><span class="mask__inner">Hackathons</span></span></h2>
+        <h2 class="section__title display" id="hackathons-title" data-drift data-ghost="Hackathons"><span class="mask"><span class="mask__inner">Hackathons</span></span></h2>
         <p class="section__aside label">6 podiums, 3 first places</p>
       </header>
 
@@ -389,14 +407,14 @@
     <section class="section wrap" id="projects" aria-labelledby="projects-title">
       <header class="section__head" data-reveal="head">
         <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 03</p>
-        <h2 class="section__title display" id="projects-title"><span class="mask"><span class="mask__inner">Projects</span></span></h2>
+        <h2 class="section__title display" id="projects-title" data-drift data-ghost="Projects"><span class="mask"><span class="mask__inner">Projects</span></span></h2>
         <p class="section__aside label">Three selected</p>
       </header>
 
       <article class="project" data-reveal>
         <p class="project__num" aria-hidden="true">01</p>
         <div class="project__main">
-          <h3 class="project__title display">MF Hub</h3>
+          <h3 class="project__title display" data-drift data-ghost="MF Hub">MF Hub</h3>
           <p class="project__desc">The platform ASMI Bucharest's fundraising department runs on, used in production by 40+ people. It covers the whole corporate outreach pipeline, from prospecting a company to a signed partnership.</p>
           <p class="project__desc">AI-assisted workflows handle company research, personalised outreach drafts and follow-up tracking. Company records, contact status and team assignments live in one place, with separate access for the department director, coordinators and volunteers.</p>
           <ul class="tags label" aria-label="Stack">
@@ -418,7 +436,7 @@
       <article class="project" id="project-drone" data-reveal>
         <p class="project__num" aria-hidden="true">02</p>
         <div class="project__main">
-          <h3 class="project__title display">Synthetic-data drone detection</h3>
+          <h3 class="project__title display" data-drift data-ghost="Synthetic-data drone detection">Synthetic-data drone detection</h3>
           <p class="project__desc">A real-time drone detection model trained entirely on synthetic data, so it doesn't depend on real aerial footage, which is expensive and hard to get.</p>
           <p class="project__desc">I built a Unity simulation pipeline over a full 3D model of Hong Kong that generates auto-annotated images across different altitudes, lighting and weather, then benchmarked how well the model generalises to real scenes it hasn't seen.</p>
           <p class="project__desc">Presented as SkyObs at the EuroTech x HKTE Hackathon in Munich.</p>
@@ -449,7 +467,7 @@
       <article class="project" data-reveal>
         <p class="project__num" aria-hidden="true">03</p>
         <div class="project__main">
-          <h3 class="project__title display">AI-enhanced soldering station</h3>
+          <h3 class="project__title display" data-drift data-ghost="AI-enhanced soldering station">AI-enhanced soldering station</h3>
           <p class="project__desc">An automated soldering workstation on the Arduino Uno Q, built with Zalmotek. Voice commands switch the power and lighting, and sensors turn on fume extraction when the tools are in use.</p>
           <ul class="tags label" aria-label="Stack">
             <li class="tag">IoT</li>
@@ -467,7 +485,7 @@
     <section class="section wrap" id="skills" aria-labelledby="skills-title">
       <header class="section__head" data-reveal="head">
         <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 04</p>
-        <h2 class="section__title display" id="skills-title"><span class="mask"><span class="mask__inner">Skills</span></span></h2>
+        <h2 class="section__title display" id="skills-title" data-drift data-ghost="Skills"><span class="mask"><span class="mask__inner">Skills</span></span></h2>
         <p class="section__aside label">What I work with</p>
       </header>
 
@@ -520,7 +538,7 @@
     <section class="section wrap" id="about" aria-labelledby="about-title">
       <header class="section__head" data-reveal="head">
         <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 05</p>
-        <h2 class="section__title display" id="about-title"><span class="mask"><span class="mask__inner">About</span></span></h2>
+        <h2 class="section__title display" id="about-title" data-drift data-ghost="About"><span class="mask"><span class="mask__inner">About</span></span></h2>
         <p class="section__aside label">Education and more</p>
       </header>
 
@@ -547,25 +565,38 @@
         </div>
       </div>
 
-      <article class="row" data-reveal>
+      <article class="row row--feature row--flip" data-reveal>
         <p class="row__when label">Jun 2026</p>
-        <div class="row__main">
-          <h3 class="row__title">Panel speaker</h3>
+        <div class="feature__text">
+          <h3 class="feature__title display">Panel speaker</h3>
           <p class="row__org">AI Coding: Seniors vs. Juniors, Vintage Club</p>
-          <p>A panel on whether juniors in tech get taken as seriously as seniors when it comes to AI coding.</p>
+          <p class="bubble">Do juniors in tech get taken as seriously as seniors?</p>
+          <p class="feature__copy">I spoke on a panel about AI coding and whether junior voices carry the same weight as senior ones. The audience came to challenge ideas and ask tough questions.</p>
+          <ul class="tags label" aria-label="Topics">
+            <li class="tag tag--solid">Talk</li>
+            <li class="tag">AI coding</li>
+            <li class="tag">Juniors in tech</li>
+          </ul>
         </div>
-        <div class="row__side">
-          <p class="label muted">Talk</p>
-          <figure class="row__photo photo" data-reveal="media">
+        <figure class="feature__photo photo" data-reveal="media">
+          <div class="feature__media">
             <div class="photo__frame">
               <picture>
                 <source srcset="assets/img/vintage-panel-talk.webp" type="image/webp">
                 <img src="assets/img/vintage-panel-talk.jpg" width="720" height="900" loading="lazy" alt="Marius speaking into a microphone on a panel, under a lit Vintage sign">
               </picture>
             </div>
-            <figcaption class="label"><span>Vintage Club</span></figcaption>
-          </figure>
-        </div>
+            <svg class="badge" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+              <circle class="badge__disc" cx="100" cy="100" r="98"/>
+              <g class="badge__ring">
+                <path id="badge-path-panel" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0" fill="none"/>
+                <text><textPath href="#badge-path-panel" textLength="450" lengthAdjust="spacing">AI CODING • SENIORS VS JUNIORS • </textPath></text>
+              </g>
+              <use class="badge__star" href="#i-star" x="78" y="78" width="44" height="44"/>
+            </svg>
+          </div>
+          <figcaption class="label"><span>Vintage Club</span></figcaption>
+        </figure>
       </article>
     </section>
 
@@ -578,7 +609,7 @@
 
       <div class="contact__top" data-reveal="head">
         <a class="contact__email display link" href="mailto:mariusmanea.teo@gmail.com">
-          <span class="mask"><span class="mask__inner">mariusmanea.teo</span></span><span class="mask"><span class="mask__inner">@gmail.com</span></span>
+          <span class="mask" data-drift-line="1"><span class="mask__inner">mariusmanea.teo</span></span><span class="mask" data-drift-line="-1"><span class="mask__inner">@gmail.com</span></span>
         </a>
         <figure class="portrait contact__portrait" style="--portrait-width: 82%" data-parallax="0.06">
           <div class="portrait__disc"></div>

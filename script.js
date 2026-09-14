@@ -126,6 +126,13 @@
     speed: parseFloat(el.dataset.parallax) || 0,
     offset: 0,
   }));
+  // Big titles that drift sideways, and paired lines that slide apart
+  const drifters = [...document.querySelectorAll('[data-drift]')];
+  const lines = [...document.querySelectorAll('[data-drift-line]')].map((el) => ({
+    el,
+    dir: parseFloat(el.dataset.driftLine) || 1,
+    inHero: Boolean(el.closest('.hero')),
+  }));
 
   bar?.addEventListener('focusin', () => bar.classList.remove('is-hidden'));
 
@@ -139,10 +146,12 @@
     const vw = window.innerWidth;
     const motion = !reduceMotion;
 
-    // Read everything first
+    // Read everything first (sideways drift never changes an element's vertical position)
     const maxScroll = root.scrollHeight - vh;
     const bandRect = motion && band ? band.getBoundingClientRect() : null;
     const layerRects = motion && wide.matches ? layers.map((layer) => layer.el.getBoundingClientRect()) : null;
+    const driftRects = motion ? drifters.map((el) => el.getBoundingClientRect()) : null;
+    const lineRects = motion ? lines.map((line) => line.el.getBoundingClientRect()) : null;
 
     // Then write
     progress?.style.setProperty('--progress', maxScroll > 0 ? (y / maxScroll).toFixed(4) : '0');
@@ -182,6 +191,26 @@
         layer.el.style.removeProperty('--parallax');
       }
     }
+
+    // Titles drift sideways as they cross the screen: left of rest on the way in,
+    // aligned at the centre, right of rest on the way out
+    drifters.forEach((el, i) => {
+      const rect = driftRects[i];
+      if (rect.bottom < -200 || rect.top > vh + 200) return;
+      const t = (rect.top + rect.height / 2) / vh - 0.5;
+      el.style.setProperty('--drift', `${(-t * vw * 0.05).toFixed(1)}px`);
+    });
+
+    // Paired lines slide apart: the hero name splits as you scroll away,
+    // the contact email closes up as it arrives
+    lines.forEach((line, i) => {
+      const rect = lineRects[i];
+      if (rect.bottom < -200 || rect.top > vh + 200) return;
+      const amount = line.inHero
+        ? Math.min(y, vh) * 0.12
+        : -((rect.top + rect.height / 2) / vh - 0.5) * vw * 0.06;
+      line.el.style.setProperty('--line-x', `${(line.dir * amount).toFixed(1)}px`);
+    });
   };
 
   const queue = () => {

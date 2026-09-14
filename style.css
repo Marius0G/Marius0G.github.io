@@ -684,6 +684,14 @@ main section[id], footer[id] {
   }
 }
 
+@media (min-width: 60em) and (max-width: 79.99em) {
+  .section__aside {
+    grid-column: 4 / -1;
+    justify-self: start;
+    text-align: left;
+  }
+}
+
 /* Photos: one treatment everywhere */
 .photo__frame {
   overflow: hidden;
@@ -750,11 +758,11 @@ main section[id], footer[id] {
   }
 
   .about__photo {
-    grid-column: 1 / span 4;
+    grid-column: 1 / span 5;
   }
 
   .about__body {
-    grid-column: 6 / -1;
+    grid-column: 7 / -1;
     padding-top: var(--space-4);
   }
 }
@@ -900,6 +908,173 @@ main section[id], footer[id] {
   }
 }
 
+/* ---------- Feature rows: big photo, text in shapes ---------- */
+
+.row--feature {
+  row-gap: var(--space-4);
+}
+
+.feature__title {
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  line-height: 0.95;
+}
+
+.feature__text .row__org {
+  margin-top: 0.75rem;
+}
+
+.feature__body {
+  margin-top: var(--space-3);
+  color: var(--muted);
+}
+
+.feature__body::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* The paragraph wraps around the curve of the circle */
+.stat-disc {
+  float: left;
+  display: grid;
+  width: 8rem;
+  height: 8rem;
+  margin: 0.25rem 1.25rem 0.5rem 0;
+  place-content: center;
+  justify-items: center;
+  gap: 0.15rem;
+  border: var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  shape-outside: circle(50%);
+  shape-margin: 0.75rem;
+}
+
+.stat-disc__num {
+  font-size: 2.4rem;
+}
+
+.stat-disc__num span {
+  color: var(--accent);
+}
+
+/* The panel question in a speech-bubble shape */
+.bubble {
+  margin-top: var(--space-3);
+  padding: 1.1rem 1.4rem 1.25rem;
+  border-radius: 2.25rem 2.25rem 2.25rem 0;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.feature__copy {
+  margin-top: var(--space-3);
+  color: var(--muted);
+}
+
+.feature__text .tags {
+  margin-top: var(--space-3);
+}
+
+.feature__photo {
+  max-width: 36rem;
+}
+
+.feature__media {
+  position: relative;
+}
+
+/* Ring badge overlapping the photo corner; the ring turns slowly */
+.badge {
+  position: absolute;
+  top: -1.25rem;
+  right: -0.25rem;
+  width: 5.5rem;
+  height: auto;
+  overflow: visible;
+}
+
+.badge__disc {
+  fill: var(--bg);
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.badge text {
+  fill: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.badge__star {
+  fill: var(--accent);
+}
+
+.badge__ring {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: spin 28s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 60em) {
+  .row--feature {
+    align-items: start;
+    padding-block: var(--space-6);
+  }
+
+  .row--feature .row__when {
+    grid-column: 1 / span 3;
+  }
+
+  .row--feature .feature__text {
+    grid-column: 4 / span 4;
+    grid-row: 1;
+  }
+
+  .row--feature .feature__photo {
+    grid-column: 8 / -1;
+    grid-row: 1;
+    justify-self: end;
+    width: 100%;
+  }
+
+  .row--flip .feature__photo {
+    grid-column: 4 / span 5;
+    justify-self: start;
+  }
+
+  .row--flip .feature__text {
+    grid-column: 9 / -1;
+    padding-left: var(--space-3);
+  }
+
+  .badge {
+    top: -2.5rem;
+    right: auto;
+    left: -1.5rem;
+    width: 8.5rem;
+  }
+
+  .row--flip .badge {
+    right: -1.5rem;
+    left: auto;
+  }
+
+}
 /* ---------- Hackathons ---------- */
 
 .awards {
@@ -1751,4 +1926,50 @@ main section[id], footer[id] {
     animation: none !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Feature badges pop in once their photo has unveiled */
+.reveal-ready [data-reveal="media"] .badge {
+  opacity: 0;
+  scale: 0.6;
+  transition: opacity 0.8s var(--ease-out) calc(var(--delay, 0ms) + 600ms), scale 1s var(--ease-out) calc(var(--delay, 0ms) + 600ms);
+}
+
+.reveal-ready [data-reveal="media"].is-in .badge {
+  opacity: 1;
+  scale: 1;
+}
+
+/* Text parallax: big titles drift sideways as they cross the screen, and an outlined
+   ghost of the same word drifts the other way. They line up when the title is centred. */
+[data-drift] {
+  position: relative;
+  isolation: isolate;
+  translate: var(--drift, 0px) 0;
+}
+
+.motion [data-drift]::after {
+  content: attr(data-ghost);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ink);
+  opacity: 0.22;
+  translate: calc(var(--drift, 0px) * -2) 0;
+  pointer-events: none;
+}
+
+.reveal-ready [data-reveal="head"] [data-drift]::after {
+  opacity: 0;
+  transition: opacity 1s var(--ease-out) 0.3s;
+}
+
+.reveal-ready [data-reveal="head"].is-in [data-drift]::after {
+  opacity: 0.22;
+}
+
+/* Paired lines (hero name, contact email) slide in opposite directions */
+.mask[data-drift-line] {
+  translate: var(--line-x, 0px) 0;
 }
