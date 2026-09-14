@@ -1,322 +1,574 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manea Marius - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marius Manea — AI Engineer in Bucharest</title>
+  <meta name="description" content="Junior AI Engineer at HazelHeartwood and Computer Science student at the University of Bucharest. Six hackathon podiums, three first places.">
+  <meta name="theme-color" content="#f4f2ed">
+  <link rel="canonical" href="https://marius0g.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marius0g.github.io/">
+  <meta property="og:title" content="Marius Manea — AI Engineer">
+  <meta property="og:description" content="RAG systems, AI agents and hackathon builds. Six podiums, three first places.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="menu-toggle">
-        <i class="fas fa-bars"></i>
+  <a class="skip-link label" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-star" viewBox="-12 -12 24 24">
+      <path vector-effect="non-scaling-stroke" d="M11.5 -2.6L11.5 2.6L6.277 2.6L9.97 6.293L6.293 9.97L2.6 6.277L2.6 11.5L-2.6 11.5L-2.6 6.277L-6.293 9.97L-9.97 6.293L-6.277 2.6L-11.5 2.6L-11.5 -2.6L-6.277 -2.6L-9.97 -6.293L-6.293 -9.97L-2.6 -6.277L-2.6 -11.5L2.6 -11.5L2.6 -6.277L6.293 -9.97L9.97 -6.293L6.277 -2.6Z"/>
+    </symbol>
+    <symbol id="i-arrow-ne" viewBox="0 0 24 24">
+      <path d="M6 18 18 6M8.5 6H18v9.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="i-arrow-se" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 8.5V18H8.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24">
+      <path d="M12 20V4M6 10l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header wrap">
+    <a class="brand" href="#top">
+      <span>Marius Manea</span>
+      <svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Sections">
+      <a class="link label" href="#about">About</a>
+      <a class="link label" href="#experience">Experience</a>
+      <a class="link label" href="#hackathons">Hackathons</a>
+      <a class="link label" href="#projects">Projects</a>
+      <a class="link label" href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="pill label" href="documents/cv-manea-marius.pdf" target="_blank" rel="noopener">
+        CV <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+      </a>
+      <button class="nav-toggle label" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="hero__eyebrow label muted">
+          <svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg>
+          Bucharest, Romania
+        </p>
+        <h1 class="hero__title display" id="hero-title">
+          <span>Marius</span>
+          <span>Manea<svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></span>
+        </h1>
+        <p class="hero__roles label">
+          <span>AI Engineer</span>
+          <svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg>
+          <span>CS Student</span>
+          <svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg>
+          <span>Hackathons</span>
+        </p>
+        <p class="hero__lede">I build RAG systems and AI agents at HazelHeartwood and study Computer Science at the University of Bucharest. Six hackathon podiums so far, three of them first places.</p>
+        <div class="hero__actions">
+          <a class="btn-circle" href="#about" aria-label="Scroll to About">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-se"/></svg>
+          </a>
+          <a class="link label" href="#hackathons">See the hackathon results</a>
+        </div>
       </div>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="sidebar-container">
-        <div class="profile-container">
-            <div class="profile-pic">
-                <img src="images/profile.jpg" alt="Manea Marius">
+
+      <div class="hero__media">
+        <figure class="portrait" style="--portrait-width: 78%">
+          <div class="portrait__disc"></div>
+          <svg class="portrait__star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg>
+          <div class="portrait__clip">
+            <picture>
+              <source srcset="assets/img/portrait-marius.webp" type="image/webp">
+              <img src="assets/img/portrait-marius.png" width="500" height="750" alt="Marius Manea standing with his arms crossed, wearing a dark T-shirt" fetchpriority="high">
+            </picture>
+          </div>
+        </figure>
+        <ul class="hero__focus label" aria-label="Focus areas">
+          <li>LLM integration</li>
+          <li>RAG systems</li>
+          <li>AI agents</li>
+          <li>Computer vision</li>
+          <li>Synthetic data</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Marquee (decorative; the same terms are listed under Skills) -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__band">
+        <div class="marquee__track">
+          <ul class="marquee__list">
+            <li>LLM integration <svg class="star"><use href="#i-star"/></svg></li>
+            <li>RAG systems <svg class="star"><use href="#i-star"/></svg></li>
+            <li>AI agents <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Computer vision <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Synthetic data <svg class="star"><use href="#i-star"/></svg></li>
+            <li>LangChain <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Python <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Unity <svg class="star"><use href="#i-star"/></svg></li>
+            <li>React <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Node.js <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Azure <svg class="star"><use href="#i-star"/></svg></li>
+            <li>C++ <svg class="star"><use href="#i-star"/></svg></li>
+          </ul>
+          <ul class="marquee__list">
+            <li>LLM integration <svg class="star"><use href="#i-star"/></svg></li>
+            <li>RAG systems <svg class="star"><use href="#i-star"/></svg></li>
+            <li>AI agents <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Computer vision <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Synthetic data <svg class="star"><use href="#i-star"/></svg></li>
+            <li>LangChain <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Python <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Unity <svg class="star"><use href="#i-star"/></svg></li>
+            <li>React <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Node.js <svg class="star"><use href="#i-star"/></svg></li>
+            <li>Azure <svg class="star"><use href="#i-star"/></svg></li>
+            <li>C++ <svg class="star"><use href="#i-star"/></svg></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="section wrap" id="about" aria-labelledby="about-title">
+      <header class="section__head">
+        <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 01</p>
+        <h2 class="section__title display" id="about-title">About</h2>
+        <p class="section__aside label">Engineer and student</p>
+      </header>
+
+      <div class="about">
+        <figure class="about__photo photo" data-reveal>
+          <div class="photo__frame">
+            <picture>
+              <source srcset="assets/img/clujhackathon-2026-audience.webp" type="image/webp">
+              <img src="assets/img/clujhackathon-2026-audience.jpg" width="548" height="685" loading="lazy" alt="Marius in the audience at Cluj Hackathon 2026, listening with his hand on his chin">
+            </picture>
+          </div>
+          <figcaption class="label"><span>Cluj Hackathon 2026</span><span>Photo: Cluj Hackathon</span></figcaption>
+        </figure>
+
+        <div class="about__body" data-reveal>
+          <p>I'm a Junior AI Engineer at HazelHeartwood. I build RAG systems and AI agents in Python and LangChain, and I own the DevOps and Azure deployment around them.</p>
+          <p>I study Computer Science at the University of Bucharest and graduate in 2027. Outside work I compete at hackathons and lead fundraising at ASMI Bucharest, where I built MF Hub, an outreach platform 40+ people use in production.</p>
+          <dl class="facts">
+            <div><dt class="label muted">Based in</dt><dd>Bucharest, Romania</dd></div>
+            <div><dt class="label muted">Studying</dt><dd>Computer Science, University of Bucharest</dd></div>
+            <div><dt class="label muted">First-year average</dt><dd>9.73 / 10</dd></div>
+            <div><dt class="label muted">Languages</dt><dd>English C2, Romanian native</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <ul class="stats" aria-label="In numbers" data-reveal>
+        <li class="stat"><span class="stat__num display">6</span><span class="label">Hackathon podiums</span></li>
+        <li class="stat stat--ink"><span class="stat__num display">3</span><span class="label">First places</span></li>
+        <li class="stat"><span class="stat__num display">40<span>+</span></span><span class="label">Production users</span></li>
+      </ul>
+    </section>
+
+    <!-- Experience -->
+    <section class="section wrap" id="experience" aria-labelledby="experience-title">
+      <header class="section__head">
+        <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 02</p>
+        <h2 class="section__title display" id="experience-title">Experience</h2>
+        <p class="section__aside label">Work, leadership, study</p>
+      </header>
+
+      <article class="row" data-reveal>
+        <p class="row__when label">Jan 2026 — Present</p>
+        <div class="row__main">
+          <h3 class="row__title">Junior AI Engineer</h3>
+          <p class="row__org">HazelHeartwood</p>
+          <ul>
+            <li>Build and deploy production RAG systems that combine vector databases and LLMs for context-aware answers over complex enterprise datasets.</li>
+            <li>Develop full-stack AI applications end to end, including the DevOps and Azure deployment around the AI layer.</li>
+            <li>Integrate generative AI pipelines into existing business workflows, so decisions get made faster and data is easier to reach.</li>
+            <li>Build custom AI agents and tooling in Python and LangChain, integrated into client infrastructure.</li>
+          </ul>
+        </div>
+        <div class="row__side"><p class="label muted">AI engineering</p></div>
+      </article>
+
+      <article class="row" data-reveal>
+        <p class="row__when label">Sep 2025 — Present</p>
+        <div class="row__main">
+          <h3 class="row__title">Management &amp; Fundraising Director</h3>
+          <p class="row__org">ASMI Bucharest</p>
+          <p>I lead the volunteer fundraising team, set the corporate outreach strategy and represent ASMI in partner meetings. More than 20 partnerships and support agreements secured so far.</p>
+        </div>
+        <div class="row__side"><p class="label muted">Leadership</p></div>
+      </article>
+
+      <article class="row" data-reveal>
+        <p class="row__when label">Nov 2024 — Sep 2025</p>
+        <div class="row__main">
+          <h3 class="row__title">Management &amp; Fundraising Volunteer</h3>
+          <p class="row__org">ASMI Bucharest</p>
+          <p>Secured partnerships for major university projects through company outreach and event networking.</p>
+        </div>
+        <div class="row__side"><p class="label muted">Volunteering</p></div>
+      </article>
+
+      <article class="row" data-reveal>
+        <p class="row__when label">Oct 2024 — Jul 2027</p>
+        <div class="row__main">
+          <h3 class="row__title">Computer Science</h3>
+          <p class="row__org">University of Bucharest, Faculty of Mathematics and Computer Science</p>
+          <p>First-year average: 9.73 out of 10.</p>
+        </div>
+        <div class="row__side"><p class="label muted">Education</p></div>
+      </article>
+
+      <article class="row" data-reveal>
+        <p class="row__when label">Jun 2026</p>
+        <div class="row__main">
+          <h3 class="row__title">Panel speaker</h3>
+          <p class="row__org">AI Coding: Seniors vs. Juniors, Vintage Club</p>
+          <p>A panel on whether juniors in tech get taken as seriously as seniors when it comes to AI coding.</p>
+        </div>
+        <div class="row__side">
+          <p class="label muted">Talk</p>
+          <figure class="row__photo photo">
+            <div class="photo__frame">
+              <picture>
+                <source srcset="assets/img/vintage-panel-talk.webp" type="image/webp">
+                <img src="assets/img/vintage-panel-talk.jpg" width="720" height="900" loading="lazy" alt="Marius speaking into a microphone on a panel, under a lit Vintage sign">
+              </picture>
             </div>
-            <div class="profile-name">Manea Marius</div>
-            <p class="profile-info profile-info-primary">Student</p>
-            <p class="profile-info">Faculty of Mathematics</p>
-            <p class="profile-info"> and Computer Science</p>
-            <p class="profile-info profile-info-secondary">University of Bucharest</p>
+            <figcaption class="label"><span>Vintage Club</span></figcaption>
+          </figure>
         </div>
-        
-        <div class="social-icons">
-            <a href="https://github.com/Marius0G" class="social-icon"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/mariusmanea05/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/marius.0g/" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/manea.marius.31/" class="social-icon"><i class="fa-brands fa-facebook"></i></i></a>
+      </article>
+    </section>
+
+    <!-- Hackathons -->
+    <section class="section wrap" id="hackathons" aria-labelledby="hackathons-title">
+      <header class="section__head">
+        <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 03</p>
+        <h2 class="section__title display" id="hackathons-title">Hackathons</h2>
+        <p class="section__aside label">6 podiums, 3 first places</p>
+      </header>
+
+      <div class="awards">
+        <details class="award" data-reveal>
+          <summary class="award__summary">
+            <span class="place" aria-label="First place">1st</span>
+            <span class="award__text">
+              <span class="award__title">Hackitall II</span>
+              <span class="award__line">Procurement intelligence for sourcing buyers, built in 24 hours.</span>
+            </span>
+            <span class="award__meta label"><span>P&amp;G challenge</span><span>Apr 2026</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+          </summary>
+          <div class="award__body">
+            <p>An AI system that pulls supplier data and risk signals out of unstructured public datasets. Every insight links back to the evidence behind it, so a buyer can check it before acting. Designed, prototyped and pitched in 24 hours.</p>
+          </div>
+        </details>
+
+        <details class="award" data-reveal>
+          <summary class="award__summary">
+            <span class="place" aria-label="First place">1st</span>
+            <span class="award__text">
+              <span class="award__title">VibeHack</span>
+              <span class="award__line">Turning large-scale unstructured data into reliable insights.</span>
+            </span>
+            <span class="award__meta label"><span>Veridion challenge</span><span>Mar 2026</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+          </summary>
+          <div class="award__body">
+            <p>A data intelligence challenge set by Veridion, won with a production-ready prototype that turns unstructured data into reliable insights, built with algorithmic efficiency as the main constraint.</p>
+          </div>
+        </details>
+
+        <details class="award" data-reveal>
+          <summary class="award__summary">
+            <span class="place" aria-label="First place">1st</span>
+            <span class="award__text">
+              <span class="award__title">Best Engineering Marathon</span>
+              <span class="award__line">A human-centric AI prototype for a social challenge.</span>
+            </span>
+            <span class="award__meta label"><span>AI for Human Benefit</span><span>Dec 2025</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+          </summary>
+          <div class="award__body">
+            <p>Designed and prototyped an AI solution to a social challenge, combining rapid prototyping with user-centred design under competition constraints.</p>
+          </div>
+        </details>
+
+        <details class="award" data-reveal>
+          <summary class="award__summary">
+            <span class="place place--third" aria-label="Third place">3rd</span>
+            <span class="award__text">
+              <span class="award__title">Cluj Hackathon 2026 — DoctoRO</span>
+              <span class="award__line">An AI medical assistant that writes up the consultation.</span>
+            </span>
+            <span class="award__meta label"><span>HealthTech</span><span>May 2026</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+          </summary>
+          <div class="award__body">
+            <p>DoctoRO transcribes a live consultation and generates the structured fisa consultatiei, cutting the time a doctor spends on paperwork for each patient. QR-based record ownership gives patients portable access to their full medical history. It was my second podium in a row at Cluj Hackathon.</p>
+          </div>
+        </details>
+
+        <details class="award" data-reveal>
+          <summary class="award__summary">
+            <span class="place place--third" aria-label="Third place">3rd</span>
+            <span class="award__text">
+              <span class="award__title">EESTEC Olympics, 13th edition</span>
+              <span class="award__line">A Capture the Flag contest with participants hand-picked by Bitdefender.</span>
+            </span>
+            <span class="award__meta label"><span>Cybersecurity</span><span>Oct 2025</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+          </summary>
+          <div class="award__body">
+            <p>I exploited and patched real vulnerabilities in networked systems, keeping protection modules hardened while they were under attack and breaking into competitors' services, over two stages and more than 20 hours.</p>
+          </div>
+        </details>
+
+        <details class="award" data-reveal>
+          <summary class="award__summary">
+            <span class="place place--third" aria-label="Third place">3rd</span>
+            <span class="award__text">
+              <span class="award__title">Cluj Hackathon 2025 — AngelAI</span>
+              <span class="award__line">A voice assistant for real-time emergency guidance.</span>
+            </span>
+            <span class="award__meta label"><span>Emergency response</span><span>May 2025</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+          </summary>
+          <div class="award__body">
+            <p>AngelAI talks people through an emergency, hands-free, using ElevenLabs voice interaction. It runs on the web and Android, built with React, Node and the Google Maps API, and knows the emergency numbers for more than 30 countries.</p>
+          </div>
+        </details>
+      </div>
+
+      <figure class="awards__photo photo" data-reveal>
+        <div class="photo__frame">
+          <picture>
+            <source srcset="assets/img/clujhackathon-2025-pitch.webp" type="image/webp">
+            <img src="assets/img/clujhackathon-2025-pitch.jpg" width="1600" height="900" loading="lazy" alt="Marius presenting at a podium with a laptop at Cluj Hackathon 2025">
+          </picture>
         </div>
-        
-        <div class="nav-links">
-            <a href="#about" class="nav-link"><i class="fas fa-user"></i> About Me</a>
-            <a href="#projects" class="nav-link"><i class="fas fa-laptop-code"></i> Personal Projects</a>
-            <a href="#cv" class="nav-link"><i class="fas fa-file-alt"></i> CV</a>
-            <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+        <figcaption class="label"><span>Cluj Hackathon 2025</span><span>Photo: Cluj Hackathon</span></figcaption>
+      </figure>
+
+      <div class="subhead" data-reveal>
+        <h3 class="subhead__title label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> Selected to compete</h3>
+        <p class="label muted">International, no podium</p>
+      </div>
+
+      <div class="awards">
+        <details class="award" data-reveal>
+          <summary class="award__summary">
+            <span class="place place--selected" aria-label="Selected"><svg class="star" aria-hidden="true"><use href="#i-star"/></svg></span>
+            <span class="award__text">
+              <span class="award__title">EU Civic Tech Hackathon — Brussels</span>
+              <span class="award__line">One of 50 people selected from across Europe.</span>
+            </span>
+            <span class="award__meta label"><span>EU Youth Buddy</span><span>Jun 2026</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+          </summary>
+          <div class="award__body">
+            <p>Two days of building, with a look at how the European Commission works from the inside. The project was EU Youth Buddy: you ask a frog mascot about EU opportunities by voice, it answers from official EU sources, then fills in the real sign-up form for you in an in-app browser. The form-filling is the part I'm proudest of.</p>
+            <a class="link label" href="https://github.com/Marius0G/CivicTech" target="_blank" rel="noopener">Code on GitHub ↗</a>
+          </div>
+        </details>
+
+        <details class="award" data-reveal>
+          <summary class="award__summary">
+            <span class="place place--selected" aria-label="Selected"><svg class="star" aria-hidden="true"><use href="#i-star"/></svg></span>
+            <span class="award__text">
+              <span class="award__title">EuroTech x HKTE Hackathon — Munich</span>
+              <span class="award__line">My first international hackathon.</span>
+            </span>
+            <span class="award__meta label"><span>SkyObs</span><span>Jun 2026</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+          </summary>
+          <div class="award__body">
+            <p>SkyObs is a privacy-first drone monitoring system that uses edge computer vision and real-time triangulation, simulated in a real-world 3D environment in Unity. Selected to compete from applicants across Europe.</p>
+            <a class="link label" href="#project-drone">See the drone detection project ↘</a>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section wrap" id="projects" aria-labelledby="projects-title">
+      <header class="section__head">
+        <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 04</p>
+        <h2 class="section__title display" id="projects-title">Projects</h2>
+        <p class="section__aside label">Three selected</p>
+      </header>
+
+      <article class="project" data-reveal>
+        <p class="project__num" aria-hidden="true">01</p>
+        <div class="project__main">
+          <h3 class="project__title display">MF Hub</h3>
+          <p class="project__desc">The platform ASMI Bucharest's fundraising department runs on, used in production by 40+ people. It covers the whole corporate outreach pipeline, from prospecting a company to a signed partnership.</p>
+          <p class="project__desc">AI-assisted workflows handle company research, personalised outreach drafts and follow-up tracking. Company records, contact status and team assignments live in one place, with separate access for the department director, coordinators and volunteers.</p>
+          <ul class="tags label" aria-label="Stack">
+            <li class="tag tag--solid">In production</li>
+            <li class="tag">React</li>
+            <li class="tag">.NET 9</li>
+            <li class="tag">PostgreSQL</li>
+            <li class="tag">AI workflows</li>
+          </ul>
         </div>
+        <div class="project__side">
+          <p class="label">AI / Full-stack</p>
+          <a class="btn-circle" href="https://github.com/Marius0G/mf-hub" target="_blank" rel="noopener" aria-label="MF Hub on GitHub">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+          </a>
         </div>
+      </article>
+
+      <article class="project" id="project-drone" data-reveal>
+        <p class="project__num" aria-hidden="true">02</p>
+        <div class="project__main">
+          <h3 class="project__title display">Synthetic-data drone detection</h3>
+          <p class="project__desc">A real-time drone detection model trained entirely on synthetic data, so it doesn't depend on real aerial footage, which is expensive and hard to get.</p>
+          <p class="project__desc">I built a Unity simulation pipeline over a full 3D model of Hong Kong that generates auto-annotated images across different altitudes, lighting and weather, then benchmarked how well the model generalises to real scenes it hasn't seen.</p>
+          <p class="project__desc">Presented as SkyObs at the EuroTech x HKTE Hackathon in Munich.</p>
+          <ul class="tags label" aria-label="Stack">
+            <li class="tag">Computer vision</li>
+            <li class="tag">Unity</li>
+            <li class="tag">Synthetic data</li>
+            <li class="tag">Sim-to-real</li>
+          </ul>
+        </div>
+        <div class="project__side">
+          <p class="label">Computer vision</p>
+          <a class="btn-circle" href="https://github.com/Mosquito-Control/system5-unity-simulation" target="_blank" rel="noopener" aria-label="Drone detection simulation on GitHub">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+          </a>
+        </div>
+        <figure class="project__media photo">
+          <div class="photo__frame">
+            <picture>
+              <source srcset="assets/img/unity-hongkong-simulation.webp" type="image/webp">
+              <img src="assets/img/unity-hongkong-simulation.jpg" width="1236" height="695" loading="lazy" alt="Aerial view of the Unity simulation: high-rise towers and streets along Victoria Harbour, Hong Kong">
+            </picture>
+          </div>
+          <figcaption class="label"><span>Unity simulation — Victoria Harbour, Hong Kong</span><span>Render</span></figcaption>
+        </figure>
+      </article>
+
+      <article class="project" data-reveal>
+        <p class="project__num" aria-hidden="true">03</p>
+        <div class="project__main">
+          <h3 class="project__title display">AI-enhanced soldering station</h3>
+          <p class="project__desc">An automated soldering workstation on the Arduino Uno Q, built with Zalmotek. Voice commands switch the power and lighting, and sensors turn on fume extraction when the tools are in use.</p>
+          <ul class="tags label" aria-label="Stack">
+            <li class="tag">IoT</li>
+            <li class="tag">Arduino Uno Q</li>
+            <li class="tag">Voice control</li>
+          </ul>
+        </div>
+        <div class="project__side">
+          <p class="label">IoT</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Skills -->
+    <section class="section wrap" id="skills" aria-labelledby="skills-title">
+      <header class="section__head">
+        <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 05</p>
+        <h2 class="section__title display" id="skills-title">Skills</h2>
+        <p class="section__aside label">What I work with</p>
+      </header>
+
+      <dl>
+        <div class="skill" data-reveal>
+          <dt class="label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> AI / ML</dt>
+          <dd>
+            <ul>
+              <li>LLM integration</li>
+              <li>RAG systems</li>
+              <li>AI agents</li>
+              <li>Computer vision</li>
+              <li>Synthetic data generation</li>
+            </ul>
+          </dd>
+        </div>
+        <div class="skill" data-reveal>
+          <dt class="label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> Languages</dt>
+          <dd>
+            <ul>
+              <li>Python</li>
+              <li>C++</li>
+              <li>C#</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>SQL</li>
+              <li>Assembly x86</li>
+              <li>Bash</li>
+            </ul>
+          </dd>
+        </div>
+        <div class="skill" data-reveal>
+          <dt class="label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> Tools</dt>
+          <dd>
+            <ul>
+              <li>LangChain</li>
+              <li>Vector databases</li>
+              <li>Unity</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>REST APIs</li>
+              <li>Azure</li>
+              <li>CI/CD</li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <!-- Contact -->
+  <footer class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 class="contact__index label" id="contact-title"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 06 — Contact</h2>
+
+      <a class="contact__email display link" href="mailto:mariusmanea.teo@gmail.com">
+        <span>mariusmanea.teo</span><span>@gmail.com</span>
+      </a>
+
+      <div class="contact__row">
+        <ul class="contact__links">
+          <li><a class="pill label" href="https://www.linkedin.com/in/mariusmanea05/" target="_blank" rel="noopener">LinkedIn <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg></a></li>
+          <li><a class="pill label" href="https://github.com/Marius0G" target="_blank" rel="noopener">GitHub <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg></a></li>
+          <li><a class="pill label" href="documents/cv-manea-marius.pdf" target="_blank" rel="noopener">CV (PDF) <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg></a></li>
+          <li><a class="pill label" href="tel:+40773361575">+40 773 361 575</a></li>
+        </ul>
+        <a class="btn-circle" href="mailto:mariusmanea.teo@gmail.com" aria-label="Send me an email">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+        </a>
+      </div>
+
+      <div class="contact__foot label">
+        <span>© 2026 Marius Manea</span>
+        <span>Set in Archivo, Inter Tight and JetBrains Mono</span>
+        <a class="link" href="#top">Back to top ↑</a>
+      </div>
     </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="main-content">
-            <section id="home" class="hero">
-                <!-- <div class="overlay"></div> -->
-                <div class="hero-text">
-                    <h1>Hey, I'm Manea Marius!</h1>
-                    <p>Computer Science Student, living in Bucharest, Romania.</p>
-                </div>
-            </section>
-            
-            <section id="about" class="section">
-                <div class="container">
-                    <h2 class="section-title">About Me</h2>
-                    <div class="about-content">
-                        <p>Passionate about cutting-edge technologies, with a strong interest in areas like blockchain, algorithm design, and software development.
-                         Constantly exploring new advancements, with a keen ability to adapt and learn quickly. 
-                         Skilled at working both independently and in collaborative environments, with a sharp analytical mindset and problem-solving approach.
-                          </p>
-                          <p>Seeking opportunities to apply theoretical knowledge in practical settings, particularly in innovative and rapidly evolving fields, 
-                            through internships, research, or entry-level roles in the tech industry.</p>
-                        <h3>Tech Stack</h3>
-                        <div class="tech-stack-container">
-                            <div class="tech-badge">
-                                <i class="fab fa-python"></i>
-                                <span>Python</span>
-                            </div>
-                            <div class="tech-badge">
-                                <i class="fas fa-code"></i>
-                                <span>C++</span>
-                            </div>
-                            <div class="tech-badge">
-                                <i class="fa-solid fa-file-code"></i>
-                                <span>C#</span>
-                            </div>
-                            <div class="tech-badge">
-                                <i class="fab fa-html5"></i>
-                                <span>HTML</span>
-                            </div>
-                            <div class="tech-badge">
-                                <i class="fab fa-js"></i>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="tech-badge">
-                                <i class="fab fa-css3-alt"></i>
-                                <span>CSS</span>
-                            </div>
-                            <div class="tech-badge">
-                                <i class="fas fa-microchip"></i>
-                                <span>Assembly x86</span>
-                            </div>
-                            <div class="tech-badge">
-                                <i class="fas fa-terminal"></i>
-                                <span>Shell</span>
-                            </div>
-                            <div class="tech-badge">
-                                <i class="fa-brands fa-rust"></i>
-                                <span>Rust</span>
-                            </div>
-                            <div class="tech-badge">
-                                <i class="fas fa-microchip"></i>
-                                <span>RISC-V</span>
-                            </div>
-                            <div class="tech-badge">
-                                <i class="fa-solid fa-code-branch"></i>
-                                <span>Git</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects" class="section">
-                <div class="container">
-                    <h2 class="section-title">Personal Projects</h2>
-                    <div class="projects-content">
-                        <div class="projects-container">
-                            <!-- Project 1 -->
-                            <div class="project-card">
-                                <div class="project-image">
-                                    <img src="images/rustapp.png" alt="Project 1">
-                                </div>
-                                <div class="project-body">
-                                    <h3 class="project-title">Weather CLI App</h3>
-                                    <p class="project-description">
-                                        A terminal-based weather application built with Rust at Rust
-Ip Workshop UPB that displays real-time weather information
-for multiple cities using a text-based user interface.
-
-                                    </p>
-                                    <div class="project-tech">
-                                        <span class="project-tech-tag">Rust</span>
-                                        <span class="project-tech-tag">TUI</span>
-                                        <span class="project-tech-tag">API</span>
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="https://github.com/Marius0G/Weather-CLI-App" class="project-btn">
-                                            <i class="fa-brands fa-github"></i> GitHub
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                <div class="project-image">
-                                    <img src="images/site.png" alt="Project 2">
-                                </div>
-                                <div class="project-body">
-                                    <h3 class="project-title">Initial D Wiki</h3>
-                                    <p class="project-description">
-                                        A terminal-based weather application built with Rust at Rust
-Ip Workshop UPB that displays real-time weather information
-for multiple cities using a text-based user interface.
-
-                                    </p>
-                                    <div class="project-tech">
-                                        <span class="project-tech-tag">HTML</span>
-                                        <span class="project-tech-tag">CSS</span>
-                                        <span class="project-tech-tag">JavaScript</span>
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="https://github.com/Marius0G/Initial-D-Wiki" class="project-btn">
-                                            <i class="fa-brands fa-github"></i> GitHub
-                                        </a>
-                                        <a href="https://marius0g.github.io/Initial-D-Wiki/" class="project-btn secondary">
-                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="project-card">
-                                
-                                <div class="project-body">
-                                    <h3 class="project-title">FileSystem - Assembly</h3>
-                                    <p class="project-description">
-                                        I developed this file system simulator for my Computer
-                                        Architecture class, where I used assembly language to create
-                                        a mock file system that includes file descriptions and
-                                        operations to add, delete, retrieve, and defrag files. The
-                                        project allowed me to gain hands-on experience with file
-                                        system manipulation at a low level, while demonstrating the
-                                        application of fundamental assembly concepts. I focused on
-                                        simulating file operations through assembly instructions,
-                                        further strengthening my understanding of computer
-                                        architecture, memory management, and system-level
-                                        programming.
-
-                                    </p>
-                                    <div class="project-tech">
-                                        <span class="project-tech-tag">Assembly x86 AT&T</span>
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="https://github.com/Marius0G/Proiect-Laborator-ASC" class="project-btn">
-                                            <i class="fa-brands fa-github"></i> GitHub
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="project-card">
-
-                                <div class="project-body">
-                                    <h3 class="project-title">UserFS</h3>
-                                    <p class="project-description">
-                                        A Bash script that monitors logged-in
-                                        users, displays active processes, and tracks the last login time
-                                        for each user. The script leverages Linux command-line
-                                        utilities to provide real-time insights into system usage and
-                                        user activity. By automating user session tracking and process
-                                        monitoring, I improved my skills in shell scripting, process
-                                        management, and system administration. I also collaborated
-                                        with a fellow student, which taught me how to use Git and
-                                        GitHub correctly.
-                                    </p>
-                                    <div class="project-tech">
-                                        <span class="project-tech-tag">Bash</span>
-                                        <span class="project-tech-tag">Linux</span>
-                                        <span class="project-tech-tag">Git</span>
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="https://github.com/Marius0G/UserFS-GreenDay" class="project-btn">
-                                            <i class="fa-brands fa-github"></i> GitHub
-                                        </a>
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="cv" class="section">
-                <div class="container">
-                    <h2 class="section-title">CV</h2>
-                    <div class="cv-content">
-                        <div class="pdf-viewer-container">
-                            <object data="documents/cv-manea-marius.pdf" type="application/pdf" class="pdf-viewer">
-                                <div class="pdf-fallback">
-                                    <p>It appears your browser doesn't support embedded PDFs. You can <a href="documents/cv-manea-marius.pdf" target="_blank">view it in a new tab</a> or download it using the button below.</p>
-                                </div>
-                            </object>
-                        </div>
-                        
-                        <div class="download-container">
-                            <a href="documents/cv-manea-marius.pdf" download class="cv-download-btn">
-                                <i class="fas fa-download"></i> Download CV
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact" class="section">
-                <div class="container">
-                    <h2 class="section-title">Contact Me</h2>
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <p>Email: <a href="mailto:mariusmanea.teo@gmail.com">mariusmanea.teo@gmail.com</a></p>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p>Location: Bucharest, Romania</p>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-university"></i>
-                                <p>University of Bucharest</p>
-                            </div>
-                        </div>
-                        
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">
-                                <i class="fas fa-paper-plane"></i> Send Message
-                            </button>
-                            
-                            <div id="formStatus" class="form-status"></div>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            
-
-            
-    </div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init("joMFr2VIfw0IpoXSZ"); 
-  })();
-</script>
+  </footer>
 </body>
 </html>
