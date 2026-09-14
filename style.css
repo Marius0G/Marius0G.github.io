@@ -1085,11 +1085,6 @@ a {
   transform: translateX(-50%);
 }
 
-/* Small cut-out on a disc beside a row */
-.row__portrait {
-  width: min(100%, 17rem);
-}
-
 /* ---------- Projects ---------- */
 
 .project {
