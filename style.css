@@ -991,45 +991,6 @@ main section[id], footer[id] {
   position: relative;
 }
 
-/* Ring badge overlapping the photo corner; the ring turns slowly */
-.badge {
-  position: absolute;
-  top: -1.25rem;
-  right: -0.25rem;
-  width: 5.5rem;
-  height: auto;
-  overflow: visible;
-}
-
-.badge__disc {
-  fill: var(--bg);
-  stroke: var(--ink);
-  stroke-width: 1.5;
-}
-
-.badge text {
-  fill: var(--ink);
-  font-family: var(--font-mono);
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.badge__star {
-  fill: var(--accent);
-}
-
-.badge__ring {
-  transform-box: view-box;
-  transform-origin: 50% 50%;
-  animation: spin 28s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @media (min-width: 60em) {
   .row--feature {
     align-items: start;
@@ -1060,18 +1021,6 @@ main section[id], footer[id] {
   .row--flip .feature__text {
     grid-column: 9 / -1;
     padding-left: var(--space-3);
-  }
-
-  .badge {
-    top: -2.5rem;
-    right: auto;
-    left: -1.5rem;
-    width: 8.5rem;
-  }
-
-  .row--flip .badge {
-    right: -1.5rem;
-    left: auto;
   }
 
 }
@@ -1927,19 +1876,6 @@ main section[id], footer[id] {
     transition-duration: 0.01ms !important;
   }
 }
-
-/* Feature badges pop in once their photo has unveiled */
-.reveal-ready [data-reveal="media"] .badge {
-  opacity: 0;
-  scale: 0.6;
-  transition: opacity 0.8s var(--ease-out) calc(var(--delay, 0ms) + 600ms), scale 1s var(--ease-out) calc(var(--delay, 0ms) + 600ms);
-}
-
-.reveal-ready [data-reveal="media"].is-in .badge {
-  opacity: 1;
-  scale: 1;
-}
-
 /* Text parallax: big titles drift sideways as they cross the screen, and an outlined
    ghost of the same word drifts the other way. They line up when the title is centred. */
 [data-drift] {
