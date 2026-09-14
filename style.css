@@ -1973,3 +1973,9 @@ main section[id], footer[id] {
 .mask[data-drift-line] {
   translate: var(--line-x, 0px) 0;
 }
+
+/* A feature row used as a spotlight inside the hackathons section */
+.row--spotlight {
+  margin-top: var(--space-6);
+  border-top: var(--line);
+}
