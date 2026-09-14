@@ -72,7 +72,7 @@
   --fs-lg: clamp(1.1875rem, 0.95rem + 0.8vw, 1.5rem);
   --fs-h2: clamp(2.5rem, 6vw, 5rem);
   --fs-hero: clamp(3rem, 9vw, 8rem);
-  --fs-email: clamp(2rem, 8.2vw, 7rem);
+  --fs-email: clamp(2rem, 6.4vw, 5.75rem);
 
   --track-display: -0.03em;
   --track-label: 0.12em;
@@ -523,7 +523,7 @@ a {
 }
 
 /* The single colour reveal on the site */
-.portrait:hover .portrait__clip img {
+.hero .portrait:hover .portrait__clip img {
   filter: none;
 }
 
@@ -1051,6 +1051,45 @@ a {
   }
 }
 
+/* Cut-out poster: the city set big behind a grayscale figure */
+.poster {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: var(--line);
+  container-type: inline-size;
+}
+
+.poster::before {
+  content: attr(data-word);
+  position: absolute;
+  top: 5cqi;
+  left: 5cqi;
+  color: var(--disc);
+  font-family: var(--font-display);
+  font-size: var(--word-size, 20cqi);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: var(--track-display);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.poster img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: var(--cut-width, 84%);
+  max-width: none;
+  filter: grayscale(1) contrast(1.15);
+  transform: translateX(-50%);
+}
+
+/* Small cut-out on a disc beside a row */
+.row__portrait {
+  width: min(100%, 17rem);
+}
+
 /* ---------- Projects ---------- */
 
 .project {
@@ -1220,6 +1259,27 @@ a {
 .contact__email.link::after {
   bottom: -0.08em;
   height: 0.05em;
+}
+
+.contact__top {
+  display: grid;
+  gap: var(--space-4) var(--col-gap);
+  align-items: end;
+}
+
+.contact__portrait {
+  width: min(60%, 14rem);
+  justify-self: end;
+}
+
+@media (min-width: 60em) {
+  .contact__top {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .contact__portrait {
+    width: clamp(14rem, 22vw, 20rem);
+  }
 }
 
 .contact__row {
