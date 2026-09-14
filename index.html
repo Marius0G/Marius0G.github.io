@@ -16,11 +16,12 @@
   <link rel="preload" href="assets/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
-  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <script>document.documentElement.classList.replace('no-js', 'js'); if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion');</script>
   <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link label" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"></div>
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="i-star" viewBox="-12 -12 24 24">
@@ -40,6 +41,7 @@
     </symbol>
   </svg>
 
+  <div class="header-bar">
   <header class="site-header wrap">
     <a class="brand" href="#top">
       <span>Marius Manea</span>
@@ -59,6 +61,7 @@
       <button class="nav-toggle label" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     </div>
   </header>
+  </div>
 
   <main id="main">
 
@@ -70,8 +73,8 @@
           Bucharest, Romania
         </p>
         <h1 class="hero__title display" id="hero-title">
-          <span>Marius</span>
-          <span>Manea<svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></span>
+          <span class="mask"><span class="mask__inner">Marius</span></span>
+          <span class="mask"><span class="mask__inner">Manea<svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></span></span>
         </h1>
         <p class="hero__roles label">
           <span>AI Engineer</span>
@@ -148,7 +151,7 @@
 
     <!-- Numbers -->
     <div class="stats-wrap wrap">
-      <ul class="stats" aria-label="In numbers">
+      <ul class="stats" aria-label="In numbers" data-reveal="stats">
         <li class="stat stat--ink"><span class="stat__num display">3</span><span class="label">Hackathon wins</span></li>
         <li class="stat"><span class="stat__num display">6</span><span class="label">Hackathon podiums</span></li>
         <li class="stat"><span class="stat__num display">40<span>+</span></span><span class="label">Production users</span></li>
@@ -157,9 +160,9 @@
 
     <!-- Experience -->
     <section class="section wrap" id="experience" aria-labelledby="experience-title">
-      <header class="section__head">
+      <header class="section__head" data-reveal="head">
         <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 01</p>
-        <h2 class="section__title display" id="experience-title">Experience</h2>
+        <h2 class="section__title display" id="experience-title"><span class="mask"><span class="mask__inner">Experience</span></span></h2>
         <p class="section__aside label">Work and leadership</p>
       </header>
 
@@ -187,7 +190,7 @@
         </div>
         <div class="row__side">
           <p class="label muted">Leadership</p>
-          <figure class="row__photo photo">
+          <figure class="row__photo photo" data-reveal="media">
             <div class="photo__frame">
               <picture>
                 <source srcset="assets/img/asmi-bucharest-stand.webp" type="image/webp">
@@ -202,9 +205,9 @@
 
     <!-- Hackathons -->
     <section class="section wrap" id="hackathons" aria-labelledby="hackathons-title">
-      <header class="section__head">
+      <header class="section__head" data-reveal="head">
         <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 02</p>
-        <h2 class="section__title display" id="hackathons-title">Hackathons</h2>
+        <h2 class="section__title display" id="hackathons-title"><span class="mask"><span class="mask__inner">Hackathons</span></span></h2>
         <p class="section__aside label">6 podiums, 3 first places</p>
       </header>
 
@@ -301,7 +304,7 @@
       </div>
 
       <div class="media-pair">
-        <figure class="photo" data-reveal>
+        <figure class="photo" data-reveal="media">
           <div class="photo__frame">
             <picture>
               <source srcset="assets/img/clujhackathon-2025-pitch.webp" type="image/webp">
@@ -310,7 +313,7 @@
           </div>
           <figcaption class="label"><span>Cluj Hackathon 2025</span><span>Photo: Cluj Hackathon</span></figcaption>
         </figure>
-        <figure class="photo" data-reveal>
+        <figure class="photo" data-reveal="media" data-parallax="0.06">
           <div class="poster" data-word="Cluj" style="--word-size: 24cqi; --cut-width: 72%">
             <picture>
               <source srcset="assets/img/cutout-cluj-2026-third-place.webp" type="image/webp">
@@ -361,7 +364,7 @@
       </div>
 
       <div class="gallery">
-        <figure class="photo" data-reveal>
+        <figure class="photo" data-reveal="media">
           <div class="photo__frame">
             <picture>
               <source srcset="assets/img/eu-civic-tech-brussels.webp" type="image/webp">
@@ -370,7 +373,7 @@
           </div>
           <figcaption class="label"><span>EU Civic Tech Hackathon</span><span>Brussels</span></figcaption>
         </figure>
-        <figure class="photo" data-reveal>
+        <figure class="photo" data-reveal="media" data-parallax="0.1">
           <div class="photo__frame">
             <picture>
               <source srcset="assets/img/eurotech-hkte-munich.webp" type="image/webp">
@@ -384,9 +387,9 @@
 
     <!-- Projects -->
     <section class="section wrap" id="projects" aria-labelledby="projects-title">
-      <header class="section__head">
+      <header class="section__head" data-reveal="head">
         <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 03</p>
-        <h2 class="section__title display" id="projects-title">Projects</h2>
+        <h2 class="section__title display" id="projects-title"><span class="mask"><span class="mask__inner">Projects</span></span></h2>
         <p class="section__aside label">Three selected</p>
       </header>
 
@@ -432,7 +435,7 @@
             <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
           </a>
         </div>
-        <figure class="project__media photo">
+        <figure class="project__media photo" data-reveal="media">
           <div class="photo__frame">
             <picture>
               <source srcset="assets/img/unity-hongkong-simulation.webp" type="image/webp">
@@ -462,9 +465,9 @@
 
     <!-- Skills -->
     <section class="section wrap" id="skills" aria-labelledby="skills-title">
-      <header class="section__head">
+      <header class="section__head" data-reveal="head">
         <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 04</p>
-        <h2 class="section__title display" id="skills-title">Skills</h2>
+        <h2 class="section__title display" id="skills-title"><span class="mask"><span class="mask__inner">Skills</span></span></h2>
         <p class="section__aside label">What I work with</p>
       </header>
 
@@ -515,14 +518,14 @@
     </section>
     <!-- About -->
     <section class="section wrap" id="about" aria-labelledby="about-title">
-      <header class="section__head">
+      <header class="section__head" data-reveal="head">
         <p class="section__index label"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 05</p>
-        <h2 class="section__title display" id="about-title">About</h2>
+        <h2 class="section__title display" id="about-title"><span class="mask"><span class="mask__inner">About</span></span></h2>
         <p class="section__aside label">Education and more</p>
       </header>
 
       <div class="about">
-        <figure class="about__photo photo" data-reveal>
+        <figure class="about__photo photo" data-reveal="media" data-parallax="-0.05">
           <div class="photo__frame">
             <picture>
               <source srcset="assets/img/clujhackathon-2026-audience.webp" type="image/webp">
@@ -553,7 +556,7 @@
         </div>
         <div class="row__side">
           <p class="label muted">Talk</p>
-          <figure class="row__photo photo">
+          <figure class="row__photo photo" data-reveal="media">
             <div class="photo__frame">
               <picture>
                 <source srcset="assets/img/vintage-panel-talk.webp" type="image/webp">
@@ -573,11 +576,11 @@
     <div class="wrap">
       <h2 class="contact__index label" id="contact-title"><svg class="star" aria-hidden="true" focusable="false"><use href="#i-star"/></svg> 06 — Contact</h2>
 
-      <div class="contact__top">
+      <div class="contact__top" data-reveal="head">
         <a class="contact__email display link" href="mailto:mariusmanea.teo@gmail.com">
-          <span>mariusmanea.teo</span><span>@gmail.com</span>
+          <span class="mask"><span class="mask__inner">mariusmanea.teo</span></span><span class="mask"><span class="mask__inner">@gmail.com</span></span>
         </a>
-        <figure class="portrait contact__portrait" style="--portrait-width: 82%">
+        <figure class="portrait contact__portrait" style="--portrait-width: 82%" data-parallax="0.06">
           <div class="portrait__disc"></div>
           <div class="portrait__clip">
             <picture>
