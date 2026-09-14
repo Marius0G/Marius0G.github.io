@@ -1003,8 +1003,18 @@ a {
   }
 }
 
-.awards__photo {
+/* Cluj: the pitch photo beside the third-place poster */
+.media-pair {
+  display: grid;
+  gap: var(--space-4) var(--col-gap);
+  align-items: start;
   margin-top: var(--space-6);
+}
+
+@media (min-width: 48em) {
+  .media-pair {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
 }
 
 .subhead {
@@ -1024,29 +1034,26 @@ a {
   gap: 0.6rem;
 }
 
-/* Event photo band: 4:5 frames, the middle one dropped for rhythm */
+/* International photos: two whole frames, set to the right and stepped */
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-4) var(--col-gap);
+  align-items: start;
   margin-top: var(--space-6);
 }
 
-.gallery > :first-child {
-  grid-column: 1 / -1;
-}
-
-@media (min-width: 48em) {
+@media (min-width: 60em) {
   .gallery {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: start;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .gallery > :first-child {
-    grid-column: auto;
+    grid-column: 5 / span 4;
   }
 
-  .gallery > :nth-child(2) {
+  .gallery > :last-child {
+    grid-column: 9 / span 4;
     margin-top: var(--space-6);
   }
 }
