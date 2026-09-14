@@ -720,11 +720,16 @@ a {
   }
 }
 
+/* The talk row that follows the About block */
+.about + .row {
+  margin-top: var(--space-6);
+  border-top: var(--line);
+}
+
 /* ---------- Stats ---------- */
 
 .stats {
   display: grid;
-  margin-top: var(--space-6);
   border: var(--line);
 }
 
