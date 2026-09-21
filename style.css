@@ -1212,18 +1212,26 @@ main section[id], footer[id] {
   margin-top: var(--space-6);
 }
 
+.gallery > :first-child {
+  grid-column: 1 / -1;
+}
+
 @media (min-width: 60em) {
   .gallery {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .gallery > :first-child {
+    grid-column: 1 / span 4;
+  }
+
+  .gallery > :nth-child(2) {
     grid-column: 5 / span 4;
+    margin-top: var(--space-6);
   }
 
   .gallery > :last-child {
     grid-column: 9 / span 4;
-    margin-top: var(--space-6);
   }
 }
 
