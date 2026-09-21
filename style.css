@@ -1216,6 +1216,17 @@ main section[id], footer[id] {
   grid-column: 1 / -1;
 }
 
+/* One frame shape so the row lines up; the Brussels shot loses a strip of sky */
+.gallery .photo__frame {
+  aspect-ratio: 3 / 4;
+}
+
+.gallery .photo__frame img {
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
 @media (min-width: 60em) {
   .gallery {
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1227,7 +1238,6 @@ main section[id], footer[id] {
 
   .gallery > :nth-child(2) {
     grid-column: 5 / span 4;
-    margin-top: var(--space-6);
   }
 
   .gallery > :last-child {
