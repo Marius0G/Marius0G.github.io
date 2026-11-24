@@ -1084,6 +1084,18 @@ main section[id], footer[id] {
   height: 1.35rem;
 }
 
+.place--second {
+  border: var(--line);
+  background: var(--disc);
+}
+
+/* A special prize: the accent block of a win, with the star in ink */
+.place--prize .star {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: var(--ink);
+}
+
 .award__text {
   grid-area: text;
 }
